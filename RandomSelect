@@ -2,9 +2,9 @@
 Intro: Randomly Chooses x amount of Strings from a set of user-defined Strings.
 Log: 
    1.0:
-      29/1 - Created Algorithm   -  Defined Vars and created Debugging Systems - # of Items section added   -  CRE v1.0
+      30/1 - Created Algorithm   -  Defined Vars and created Debugging Systems - # of Items section added   -  CRE v1.0
+           - Created User Input  -  Changed format from Array to ArrayList -  Try Catch Statements added
 -->1.1:
-      30/1 - Created User Input  -  Changed format from Array to ArrayList -  Try Catch Statements added
       31/1 - Added to GitHub  -  Added 'Same Element Picked More Than Once' patch   -  CRE v1.1
 */
 import java.util.ArrayList;
