@@ -1,0 +1,93 @@
+/*Ammad Hashmi v1.1
+Intro: Randomly Chooses x amount of Strings from a set of user-defined Strings.
+Log: 
+   1.0:
+      29/1 - Created Algorithm  - Defined Vars and created Debugging Systems
+-->1.1:
+      30/1 - Created User Input - Changed names format from Array to ArrayList - Try Catch Statements added
+*/
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//TO DO:
+// -Names should be ArrayList    -Organize and Comment Code
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+public class RandomSelect {
+   public static void main(String[] args){
+      
+      //Defining Variables
+      Scanner scan = new Scanner(System.in);
+      boolean done = false;
+      ArrayList<String> names = new ArrayList<String>();
+      String item;
+      
+         
+      //User Input
+      while(done == false){
+         int count=0;
+         System.out.println("Enter in an Item: ");
+         item = scan.nextLine();
+         names.add(item);
+         
+         //To Add more Items or not
+         String finis;
+         System.out.println("Add another Item? (y/n): ");
+         finis = scan.nextLine();
+         //finis = finis.toLowerCase();
+         //System.out.println(finis+""); //check
+         if(finis.equalsIgnoreCase("n")==true){
+            done=true;
+         }
+      }
+      
+      //# of Items to be Selected User Input          
+      int numb=0;
+      
+         try{
+            System.out.println("How many items should be randomly selected? [Numerical Value]: ");
+            numb = scan.nextInt(); //# of Items needed to be Selected
+             
+          }catch(InputMismatchException e){
+            System.out.println("This is not a Numerical Value. Restart Program ");
+            
+         }
+      
+           
+      
+      //Debug
+        System.out.println(".");
+        //System.out.println("Total # of Items: " + tot);
+        //System.out.println(index);
+
+      //Choosing the Random Elements  
+      Random rand = new Random();
+      String[] chosen = new String[numb];
+      //int[] antiRepeat;
+      int randomNum;
+      int tot = names.size()+1; //Total # of items
+      int chosenPlace=0;
+      String place;
+            
+      if(numb < tot){
+      for(int i = 0; i <= numb; i++){
+         randomNum = rand.nextInt(--tot);
+         //System.out.println(randomNum); //Debug
+         place = names.get(randomNum);
+         names.remove(randomNum);
+         //System.out.println(place);     //Debug
+         chosen[0] = place;
+         chosenPlace++;
+         }
+      }else{
+         System.out.println("You asked for more Items than there are." +
+         "\nBeing able to select an item more than once will come in a later version.");
+      }
+     System.out.println(Arrays.toString(chosen));
+          
+   }
+}   
+      
